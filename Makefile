@@ -1,17 +1,18 @@
 sync:
-	uv sync
+	@uv sync
 
 run: sync
-	uv run ch1.py
+	@uv run ch1.py
 
 format: sync
-	uv run ruff format
+	@uv run ruff format
 
 lint: format
-	uv run ruff check . --fix
+	@uv run ruff check . --fix
+	@uv run mypy .
 
 init:
-	uv sync
-	uv run pre-commit install --hook-type commit-msg
+	@uv sync
+	@uv run pre-commit install --hook-type commit-msg
 
 .PHONY: sync run format lint init

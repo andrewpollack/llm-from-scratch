@@ -20,6 +20,9 @@ trigger: always_on
   - Format code: `uv run ruff format`
   - Lint code: `uv run ruff check . --fix`
 
+- **Use mypy**: Type checking and static analysis must be done with mypy
+  - Run using: `uv run mypy`
+
 - **Type Hints**: Use Python type hints for all function parameters and return values
   ```python
   def process_data(input_data: list[float]) -> float:
