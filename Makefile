@@ -2,7 +2,7 @@ sync:
 	uv sync
 
 run: sync
-	uv run main.py
+	uv run ch1.py
 
 format: sync
 	uv run ruff format
