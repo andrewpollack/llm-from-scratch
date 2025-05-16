@@ -5,12 +5,9 @@ including Python version, PyTorch version, CUDA availability,
 and platform details.
 """
 
-# Standard library imports
 import sys
 import platform
-from typing import NoReturn
 
-# Third-party library imports
 import torch
 
 
@@ -29,16 +26,18 @@ def set_seeds(seed: int = 42) -> None:
     random.seed(seed)
 
 
-def main() -> NoReturn:
+def main() -> None:
     """Print environment information.
 
     Displays Python version, PyTorch version, CUDA availability,
     and platform information.
     """
-    print("Python:", sys.version)
-    print("PyTorch:", torch.__version__)
-    print("CUDA available:", torch.cuda.is_available())
-    print("Platform:", platform.platform())
+    print(f"""
+Python: {sys.version}
+PyTorch: {torch.__version__}
+CUDA available: {torch.cuda.is_available()}
+Platform: {platform.platform()}
+""")
 
 
 if __name__ == "__main__":
